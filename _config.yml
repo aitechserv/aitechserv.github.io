@@ -1,0 +1,13 @@
+title: AITechServ
+description: AI and Technology Services across Agriculture, Banking, Engineering and other industries.
+url: "https://aitechserv.ae"
+baseurl: ""
+email: contact@aitechserv.ae
+lang: en
+
+markdown: kramdown
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
