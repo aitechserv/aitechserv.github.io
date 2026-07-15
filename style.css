@@ -281,7 +281,11 @@ body {
   border-radius: 20px;
 }
 
-.leader-highlights { margin-top: 4px; }
+.section-intro {
+  max-width: 720px;
+  font-size: 1.05rem;
+  margin: -18px 0 32px;
+}
 
 /* Footer */
 .site-footer {
