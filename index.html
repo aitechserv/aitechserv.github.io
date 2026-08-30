@@ -22,7 +22,16 @@
       </a>
       <nav class="site-nav">
         <a href="#services">Services</a>
-        <a href="#products">Products</a>
+        <div class="nav-dropdown">
+          <button class="nav-drop-toggle" aria-expanded="false" aria-haspopup="true">Products <span class="caret">▾</span></button>
+          <div class="nav-drop-panel">
+            <p class="drop-title">Select products to view</p>
+            <label class="drop-option"><input type="checkbox" class="prod-toggle" data-target="prod-cardiolog" checked> CardioLog</label>
+            <label class="drop-option"><input type="checkbox" class="prod-toggle" data-target="prod-temp" checked> Temperature Monitoring</label>
+            <label class="drop-option"><input type="checkbox" class="prod-toggle" data-target="prod-humidity" checked> Humidity Monitoring</label>
+            <a href="#products" class="drop-viewall">Go to products &rarr;</a>
+          </div>
+        </div>
         <a href="#industries">Industries</a>
         <a href="#expertise">Expertise</a>
         <a href="#leadership">Leadership</a>
@@ -124,21 +133,37 @@
       <div class="container">
         <p class="eyebrow">What we've built</p>
         <h2>Products</h2>
-        <p class="section-intro">Alongside client work, we build our own applications — practical, privacy-first tools people use every day.</p>
-        <div class="product">
+        <p class="section-intro">Alongside client work, we build our own applications and connected-device solutions — practical, privacy-first tools for people and environments. Use the <strong>Products</strong> menu above to choose which products to view.</p>
+
+        <div id="prod-cardiolog" class="product product-item">
           <div class="product-media">
             <img src="https://www.quietbyte.net/apps/cardiolog-icon.jpg" alt="CardioLog app icon" width="112" height="112" loading="lazy">
           </div>
           <div class="product-body">
             <h3>CardioLog — BP &amp; Sugar Tracker</h3>
             <p class="product-tagline">Track blood pressure and blood sugar for your whole family.</p>
-            <p>CardioLog lets you log readings, run guided BP sessions with rest timers, and generate doctor-ready PDF reports — with separate profiles for each family member. It works 100% offline with no account needed, so health records stay private on your device.</p>
-            <div class="leader-tags">
-              <span>Guided BP sessions</span>
-              <span>Doctor-ready reports</span>
-              <span>Family profiles</span>
-              <span>Weekly insights</span>
-              <span>100% offline &amp; private</span>
+            <p>CardioLog lets you log readings, run guided BP sessions, and generate doctor-ready PDF reports — with separate profiles for each family member. It works 100% offline with no account needed, so health records stay private on your device.</p>
+            <div class="product-features">
+              <div class="feature">
+                <h4>Guided BP sessions</h4>
+                <p>Take multiple blood-pressure readings with built-in rest timers when you want a more consistent, reliable average.</p>
+              </div>
+              <div class="feature">
+                <h4>Doctor-ready reports</h4>
+                <p>Generate a clear PDF of readings and trends to support a productive conversation with your healthcare professional.</p>
+              </div>
+              <div class="feature">
+                <h4>Family profiles</h4>
+                <p>Track parents, a partner, or yourself — each person keeps their own separate readings, trends, and reports.</p>
+              </div>
+              <div class="feature">
+                <h4>Weekly insights</h4>
+                <p>See changes and logging consistency at a glance, without navigating a complicated medical dashboard.</p>
+              </div>
+              <div class="feature">
+                <h4>100% offline &amp; private</h4>
+                <p>Readings, profile names, notes, and exported reports stay stored locally — never sent to analytics or diagnostic services.</p>
+              </div>
             </div>
             <div class="store-badges">
               <a href="https://play.google.com/store/apps/details?id=com.cardiolog.app" target="_blank" rel="noopener" aria-label="Get CardioLog on Google Play">
@@ -147,6 +172,70 @@
               <a href="https://apps.apple.com/us/app/cardiolog-bp-sugar-tracker/id6799607413" target="_blank" rel="noopener" aria-label="Download CardioLog on the App Store">
                 <img src="https://www.quietbyte.net/apps/download-on-app-store.svg" alt="Download on the App Store" height="48" loading="lazy">
               </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="prod-temp" class="product product-item">
+          <div class="product-media">
+            <div class="product-icon">🌡️</div>
+          </div>
+          <div class="product-body">
+            <h3>Temperature Monitoring</h3>
+            <p class="product-tagline">Real-time temperature monitoring for any environment.</p>
+            <p>Wireless IoT sensors track temperature continuously across cold chains, warehouses, server rooms, greenhouses, and laboratories — with instant alerts the moment a reading drifts out of a safe range, so you can act before stock or equipment is at risk.</p>
+            <div class="product-features">
+              <div class="feature">
+                <h4>Continuous sensing</h4>
+                <p>Battery-powered wireless sensors log temperature around the clock and stream readings to a central dashboard.</p>
+              </div>
+              <div class="feature">
+                <h4>Threshold alerts</h4>
+                <p>Receive SMS, email, or app notifications the instant a reading crosses the limits you define for each location.</p>
+              </div>
+              <div class="feature">
+                <h4>Multi-site dashboards</h4>
+                <p>Monitor every site and sensor from one screen, with live status, history, and trend charts.</p>
+              </div>
+              <div class="feature">
+                <h4>Compliance reporting</h4>
+                <p>Export audit-ready temperature logs to support food-safety, pharmaceutical, and quality standards.</p>
+              </div>
+            </div>
+            <div class="store-badges">
+              <a class="btn primary" href="#contact">Discuss a deployment</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="prod-humidity" class="product product-item">
+          <div class="product-media">
+            <div class="product-icon">💧</div>
+          </div>
+          <div class="product-body">
+            <h3>Humidity Monitoring</h3>
+            <p class="product-tagline">Keep humidity in the right range, everywhere it matters.</p>
+            <p>IoT humidity sensors for warehouses, agriculture and greenhouses, museums and archives, laboratories, and manufacturing — protecting stock, crops, and sensitive materials from moisture, condensation, and drying damage.</p>
+            <div class="product-features">
+              <div class="feature">
+                <h4>Precise RH tracking</h4>
+                <p>Measure relative humidity continuously with calibrated sensors built for demanding environments.</p>
+              </div>
+              <div class="feature">
+                <h4>Environment presets</h4>
+                <p>Tailored safe ranges for storage, growing, archival, and production settings — configured to your needs.</p>
+              </div>
+              <div class="feature">
+                <h4>Early-warning alerts</h4>
+                <p>Get notified before condensation, mould, or excessive drying can cause costly damage.</p>
+              </div>
+              <div class="feature">
+                <h4>Combined climate view</h4>
+                <p>Pair with temperature sensors for a complete environmental picture across every site.</p>
+              </div>
+            </div>
+            <div class="store-badges">
+              <a class="btn primary" href="#contact">Discuss a deployment</a>
             </div>
           </div>
         </div>
@@ -295,5 +384,34 @@
       &copy; 2026 AITechServ. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var dd = document.querySelector('.nav-dropdown');
+      if (dd) {
+        var toggle = dd.querySelector('.nav-drop-toggle');
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          var open = dd.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+      var toggles = document.querySelectorAll('.prod-toggle');
+      function applyFilter() {
+        toggles.forEach(function (cb) {
+          var el = document.getElementById(cb.getAttribute('data-target'));
+          if (el) { el.hidden = !cb.checked; }
+        });
+      }
+      toggles.forEach(function (cb) { cb.addEventListener('change', applyFilter); });
+      applyFilter();
+    })();
+  </script>
 </body>
 </html>
