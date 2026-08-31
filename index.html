@@ -23,13 +23,11 @@
       <nav class="site-nav">
         <a href="#services">Services</a>
         <div class="nav-dropdown">
-          <button class="nav-drop-toggle" aria-expanded="false" aria-haspopup="true">Products <span class="caret">▾</span></button>
+          <a href="#products" class="nav-drop-toggle" aria-expanded="false" aria-haspopup="true">Products <span class="caret">▾</span></a>
           <div class="nav-drop-panel">
-            <p class="drop-title">Select products to view</p>
-            <label class="drop-option"><input type="checkbox" class="prod-toggle" data-target="prod-cardiolog" checked> CardioLog</label>
-            <label class="drop-option"><input type="checkbox" class="prod-toggle" data-target="prod-temp" checked> Temperature Monitoring</label>
-            <label class="drop-option"><input type="checkbox" class="prod-toggle" data-target="prod-humidity" checked> Humidity Monitoring</label>
-            <a href="#products" class="drop-viewall">Go to products &rarr;</a>
+            <a class="drop-option" href="#prod-cardiolog">CardioLog</a>
+            <a class="drop-option" href="#prod-temp">Temperature Monitoring</a>
+            <a class="drop-option" href="#prod-humidity">Humidity Monitoring</a>
           </div>
         </div>
         <a href="#industries">Industries</a>
@@ -133,7 +131,7 @@
       <div class="container">
         <p class="eyebrow">What we've built</p>
         <h2>Products</h2>
-        <p class="section-intro">Alongside client work, we build our own applications and connected-device solutions — practical, privacy-first tools for people and environments. Use the <strong>Products</strong> menu above to choose which products to view.</p>
+        <p class="section-intro">Alongside client work, we build our own applications and connected-device solutions — practical, privacy-first tools for people and environments.</p>
 
         <div id="prod-cardiolog" class="product product-item">
           <div class="product-media">
@@ -388,29 +386,28 @@
   <script>
     (function () {
       var dd = document.querySelector('.nav-dropdown');
-      if (dd) {
-        var toggle = dd.querySelector('.nav-drop-toggle');
-        toggle.addEventListener('click', function (e) {
+      if (!dd) return;
+      var toggle = dd.querySelector('.nav-drop-toggle');
+      toggle.addEventListener('click', function (e) {
+        // On the first tap (touch), open the menu instead of jumping.
+        if (!dd.classList.contains('open')) {
           e.preventDefault();
-          var open = dd.classList.toggle('open');
-          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          dd.classList.add('open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+      dd.querySelectorAll('.nav-drop-panel a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          dd.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
         });
-        document.addEventListener('click', function (e) {
-          if (!dd.contains(e.target)) {
-            dd.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-      var toggles = document.querySelectorAll('.prod-toggle');
-      function applyFilter() {
-        toggles.forEach(function (cb) {
-          var el = document.getElementById(cb.getAttribute('data-target'));
-          if (el) { el.hidden = !cb.checked; }
-        });
-      }
-      toggles.forEach(function (cb) { cb.addEventListener('change', applyFilter); });
-      applyFilter();
+      });
+      document.addEventListener('click', function (e) {
+        if (!dd.contains(e.target)) {
+          dd.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     })();
   </script>
 </body>
